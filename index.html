@@ -5,12 +5,19 @@
   <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
+
   <form name="conversion">
     <input type="text" id="searchinput">
     <select>
+      <option selected disabled> Choose a currency to conver to </option>
       <option> btc </option>
       <option> usd </option>
+      <option> other </option>
     </select>
+    <br>
+    <label> If other: input 3 letter currency abbreviation
+    <input type="text" id="othercurrency">
+  </label>
       </form>
     <button> convert </button>
 
