@@ -27,32 +27,30 @@ function thingToDo(err, data) {
         //console.log(data);
 
         var convertTo = document.body.querySelector('select').value;
-      if (convertTo === "btc" || convertTo ==="usd"){
-        var conversionRate = data["data"]["price"][convertTo];
+        if (convertTo === "btc" || convertTo === "usd") {
+            var conversionRate = data["data"]["price"][convertTo];
 
-        var amount = document.querySelector('#searchinput').value;
+            var amount = document.querySelector('#searchinput').value;
 
-        var value = amount * conversionRate;
+            var value = amount * conversionRate;
 
-        console.log("your ether amount in " + convertTo + " is " + value);
+            console.log("your ether amount in " + convertTo + " is " + value);
+        } else {
+            ajax('GET', 'http://api.fixer.io/latest?base=USD', function(error, data2) {
+                if (!error) {
+                    var rateobj = data2["rates"];
+                    console.log(rateobj);
+
+                    var convertTo = (document.body.querySelector('#othercurrency').value).toUpperCase();
+                    //console.log(convertTo);
+                    console.log(rateobj[convertTo]);
+                    var amount = document.querySelector('#searchinput').value * data["data"]["price"]["usd"];
+                    var value = amount * rateobj[convertTo];
+                    console.log("your ether amount in " + convertTo + " is " + value);
+                }
+            });
+        }
     }
-
-  else {
-    ajax('GET', 'http://api.fixer.io/latest?base=USD', function(error, data2){
-  if (!error) {
-      var rateobj=data2["rates"];
-console.log(rateobj);
-
-    var convertTo= (document.body.querySelector('#othercurrency').value).toUpperCase();
-    //console.log(convertTo);
-    console.log(rateobj[convertTo]);
-    var amount = document.querySelector('#searchinput').value*data["data"]["price"]["usd"];
-    var value = amount * rateobj[convertTo];
-    console.log("your ether amount in " + convertTo + " is " + value);
-}
-});
-  }
-}
 }
 
 // function placeRates(err, data) {
@@ -61,5 +59,53 @@ console.log(rateobj);
 //       return(rateobj);
 //     }
 //   }
-document.body.querySelector('button').addEventListener('click', start);
+function startother() {
+    ajax('GET', 'https://etherchain.org/api/basic_stats', otherThing);
+}
+
+document.body.querySelector('#initial').addEventListener('click', start);
 // This is a working section
+
+document.body.querySelector('#second').addEventListener('click', startother);
+
+
+
+function otherThing(err, data) {
+    if (!err) {
+        //console.log(data);
+
+
+        var convertFrom = document.body.querySelector('#currency').value;
+        if (convertFrom === "btc" || convertFrom === "usd") {
+            var conversionRate = data["data"]["price"][convertFrom];
+
+            var amount = document.querySelector('#startingamount').value;
+
+            var value = amount / conversionRate;
+
+            console.log("your " + convertFrom + " amount in  ethers is " + value);
+        } else {
+            ajax('GET', 'http://api.fixer.io/latest?base=USD', function(error, data2) {
+                if (!error) {
+                    var rateobj = data2["rates"];
+                    console.log(rateobj);
+
+                    var convertFrom = (document.body.querySelector('#currency').value).toUpperCase();
+                    //console.log(convertTo);
+                    console.log(convertFrom);
+
+                    var amount = document.querySelector('#startingamount').value / rateobj[convertFrom];
+                    console.log(amount);
+                    var conversionRate = data["data"]["price"]["usd"];
+
+
+                    var value = amount / conversionRate;
+
+
+                    console.log("your " + convertFrom + " amount in  ethers is " + value);
+                }
+            });
+        }
+    }
+
+}
