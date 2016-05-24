@@ -39,11 +39,14 @@ function ajax(method, url, handler) {
 }
 
 function start() {
+  grapharray = [];
+  labelarray = [];
     ajax('GET', 'https://etherchain.org/api/statistics/price', thingToDo);
+
 }
 
 function thingToDo(err, data) {
-  
+
     if (!err) {
         console.log(data);
         for (var i = 0; i < data["data"].length; i++) {
@@ -118,6 +121,8 @@ function makechart() {
 // works  before this adding new below
 
 function start2() {
+  grapharray2= [];
+  labelarray2= [];
     ajax('GET', 'https://etherchain.org/api/statistics/price', othergraph);
 
 }
@@ -157,6 +162,7 @@ function othergraph(err, data) {
 }
 
 function makeMonthChart() {
+
     var ctx = document.getElementById("myChart");
     var data = {
         labels: labelarray2,
@@ -199,6 +205,7 @@ function makeMonthChart() {
 
     });
 }
+
 
 
 document.body.querySelector('#day').addEventListener('click', start);
