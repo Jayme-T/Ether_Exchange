@@ -75,6 +75,7 @@ function startother() {
     ajax('GET', 'https://etherchain.org/api/basic_stats', otherThing);
 }
 
+
 document.body.querySelector('#initial').addEventListener('click', start);
 // This is a working section
 
