@@ -3,7 +3,11 @@
 
 <head>
     <link rel="stylesheet" href="reset.css" media="screen" title="no title" charset="utf-8">
+
     <title>coin base conversion </title>
+    <title>
+        Title page?
+    </title>
     <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -15,89 +19,65 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body class="all">
     <div class="container-fluid">
-        <div class="row bg-info">
+        <div class="row">
             <div class="col-md-12">
-                <div class="col-md-2">(make a logo) </div>
-                <div class="col-md-4"> </div>
-                <div class="col-md-2">
-                    <br>
-                    <button> Home </button>
-                    <br>
+                <div class="row head">
+                    <div class="col-md-3">
+                        <img src="face.jpg" width="50px;">
+                    </div>
+                    <div class="col-md-6 title"> Title </div>
+                    <div class="col-md-1">
+                        <br>
+                        <button onclick="window.location.href='graphhtml.html'"> Graphs </button>
+                    </div>
+                    <div class="col-md-1">
+                        <br>
+                        <button onclick="window.location.href='converter.html'">conversions </button>
+                    </div>
                 </div>
-                <div class="col-md-2">
-                    <br>
-                    <button> About </button>
-                    <br>
-                    <br> </div>
-                <div class="col-md-2">
-                    <br>
-                    <button> Market </button>
-                    <br> </div>
             </div>
         </div>
-        <br>
-        <br>
-        <div class="row">
+
+    <div class="row">
+        <div class="col-md-2"> </div>
+        <div class="col-md-8 main">
+          <div class="row">
+            <br>
+            <br>
             <div class="col-md-2"> </div>
             <div class="col-md-8">
-                <div class="row">
-                    <div class="col-md-1"> </div>
-                    <div class="col-md-10">
-                        <h1> If you have Ethers and are looking to convert to another currency </h1>
-                    </div>
-                </div>
-                <div class="row bg-success" id="first">
-                    <div class="col-md-2"> </div>
-                    <div class="col-md-10">
-                        <form name="conversion">
-                            <label> number of ether
-                                <input type="text" id="searchinput">
-                            </label>
-                            <select>
-                                <option selected disabled> Choose a currency to conver to </option>
-                                <option> btc </option>
-                                <option> usd </option>
-                                <option> other </option>
-                            </select>
-                            <br>
-                            <label> If other: input 3 letter currency abbreviation
-                                <input type="text" id="othercurrency">
-                            </label>
-                        </form>
-                        <button id="initial"> convert </button>
-                        <p id="result1"> </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1"> </div>
-                    <div class="col-md-10">
-                        <h1> If you are looking to convert a currency to Ether </h1>
-                    </div>
-                </div>
-                <div class="row bg-success">
-                    <div class="col-md-2"> </div>
-                    <div class="col-md-10">
-                        <form name="conversion_other">
+              <div class="row bg-info border">
+                <div class="col-md-7"> <img class="pic" src="smaller.png" width="250px;"> </div>
+                <div class="col-md-5"> about graphs </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <br>
+              <div class="row bg-info border">
+                <br>
+                <div class="col-md-7"> <img class="pic" src="converter.png" width="250px"> <br> <br> <br> </div>
 
-                            <label> 3 letter Starting Currency abbreviation
-                                <input type="text" id="currency">
-                            </label>
-                            <label> amount
-                                <input type="text" id="startingamount">
-                            </label>
-                            <br>
+                <div class="col-md-5"> Need to know the conversion rate </div>
+              </div>
+                <br>
+                <br>
+                <br>
+                <br>
 
-                        </form>
-                        <button id="second"> convert </button>
-                        <p id="result2"> </p>
-                    </div>
+                <div class="row bg-info border">
+                  <div class="col-md-7"> <img class="pic" src="ETHEREUM.png" width="200px;"> </div>
+                  <div class="col-md-5"> Why Ethers</div>
                 </div>
-            </div>
+
+
+              </div>
+          </div>
         </div>
     </div>
-    <script type="text/javascript" src="script.js"></script>
+    </div>
 
 
 </body>

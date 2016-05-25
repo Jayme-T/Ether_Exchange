@@ -1,0 +1,31 @@
+.all{
+  background-color:rgb(11, 11, 11);
+}
+
+.main{
+  background-image:url('tree.jpg');
+  height:700px;
+}
+
+.head{
+  background-color:rgb(171, 120, 199);
+}
+
+button{
+  border-radius: 50%;
+  border: solid black 2px;
+  height:50px;
+  background-color:rgb(217,237,247);
+}
+.pic{
+  border: black 5px;
+}
+.border{
+  border:black 5px solid;
+}
+.title{
+  color:white;
+  font-size:60px;
+  text-align:center;
+  text-shadow: 2px 2px 2px #000;
+}

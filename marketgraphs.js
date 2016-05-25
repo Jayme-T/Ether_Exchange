@@ -122,7 +122,7 @@ function makechart() {
 
 function start2() {
   grapharray2= [];
-  labelarray2= [];
+  labelarray = [];
     ajax('GET', 'https://etherchain.org/api/statistics/price', othergraph);
 
 }
@@ -186,6 +186,7 @@ function makeMonthChart() {
             pointRadius: 1,
             pointHitRadius: 10,
             data: grapharray2,
+            
 
         }]
     };
