@@ -49,6 +49,9 @@ function thingToDo(err, data) {
   labelarray = [];
 
 
+
+
+
     if (!err) {
         console.log(data);
         for (var i = 0; i < data["data"].length; i++) {
@@ -80,6 +83,7 @@ function thingToDo(err, data) {
 }
 
 function makechart() {
+  
     var ctx = document.getElementById("myChart");
     var data = {
         labels: labelarray,

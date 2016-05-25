@@ -1,10 +1,12 @@
-.all{
-  background-color:rgb(11, 11, 11);
+.main{
+  background-color:rgb(96, 98, 105);
+  height:800px;
 }
 
-.main{
+.all{
   background-image:url('tree.jpg');
-  height:700px;
+  background-size: cover;
+
 }
 
 .head{
@@ -25,9 +27,20 @@ button{
   background-color:rgb(217,237,247);
 }
 
-
-
+.backgroundpic{
+  background-image: url('smaller.png');
+  background-size:cover;
+  opacity:3.75;
 }
+.three{
+  background-color:white;
+}
+
+.align{
+  text-align:center;
+}
+
+
 .pic{
   border: black 5px;
 }
@@ -51,4 +64,7 @@ button{
 }
 #edit{
   text-align:center;
+}
+.screen{
+  background-color: rgb(177, 180, 182);
 }
