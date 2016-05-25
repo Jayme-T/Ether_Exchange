@@ -89,14 +89,17 @@ function otherThing(err, data) {
 
 
         var convertFrom = document.body.querySelector('#currency').value;
-        if (convertFrom === "btc" || convertFrom === "usd") {
+        if (convertFrom === "btc" || convertFrom === "usd"||convertFrom === "BTC" || convertFrom === "USD") {
+          convertFrom=convertFrom.toLowerCase();
+          
             var conversionRate = data["data"]["price"][convertFrom];
 
             var amount = document.querySelector('#startingamount').value;
 
             var value = amount / conversionRate;
 
-            console.log("your " + convertFrom + " amount in  ethers is " + value);
+            //console.log("your " + convertFrom + " amount in  ethers is " + value);
+            document.body.querySelector('#result2').innerHTML = "your " + convertFrom + " amount in  ethers is " + value;
         } else {
             ajax('GET', 'http://api.fixer.io/latest?base=USD', function(error, data2) {
                 if (!error) {

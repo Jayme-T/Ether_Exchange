@@ -5,17 +5,72 @@
     <title>coin base conversion </title>
     <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
     <script src="node_modules/chart.js/dist/Chart.js"></script>
+    <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row head">
+                    <div class="col-md-3">
+                        <img src="face.jpg" width="50px;">
+                    </div>
+                    <div class="col-md-6 title"> Title </div>
+                    <div class="col-md-1">
+                        <br>
+                        <button onclick="window.location.href='index.html'"> Home </button>
+                    </div>
+                    <div class="col-md-1">
+                        <br>
+                        <button onclick="window.location.href='converter.html'">conversions </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="row border">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <h1> Price Charts </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                  <p> Below you will be able to look at chart graphs that compare the conversion rate between Ethers and USD. These types of graphs can be useful for investors to see the general trend of the currency. You can choose if you would
+                      like to see a graph of the day that shows hour by hour update up to the current hour of the day or if you would rather see the months data.
+                  </p>
+                  <button id="day" class="square"> today </button>
+                  <button id="month" class="square"> this month </button>
+              </div>
+
+
+
+                    </div>
+                </div>
+            </div>
 
     <script type="text/javascript" src="script.js"></script>
-        <canvas id="myChart" width="90px" height="30px"></canvas>
-  
-    <button id="day"> today </button>
-    <button id="month"> this month </button>
+    <canvas id="myChart" width="90px" height="30px"></canvas>
+    <p id="edit"></p>
+
+    <br>
+    <br>
+    <br>
+    <br>
     <script src="marketgraphs.js">
     </script>
 

@@ -39,13 +39,15 @@ function ajax(method, url, handler) {
 }
 
 function start() {
-  grapharray = [];
-  labelarray = [];
+
     ajax('GET', 'https://etherchain.org/api/statistics/price', thingToDo);
 
 }
 
 function thingToDo(err, data) {
+  grapharray = [];
+  labelarray = [];
+
 
     if (!err) {
         console.log(data);
@@ -71,6 +73,8 @@ function thingToDo(err, data) {
             }
         }
         makechart();
+
+        document.querySelector('#edit').innerHTML="Hour of the day";
     }
 
 }
@@ -102,7 +106,7 @@ function makechart() {
 
         }]
     };
-    console.log(data);
+
 
     var myLineChart = new Chart(ctx, {
         type: 'line',
@@ -121,13 +125,15 @@ function makechart() {
 // works  before this adding new below
 
 function start2() {
-  grapharray2= [];
-  labelarray = [];
+  // grapharray2= [];
+  // labelarray2= [];
     ajax('GET', 'https://etherchain.org/api/statistics/price', othergraph);
 
 }
 
 function othergraph(err, data) {
+  grapharray2= [];
+  labelarray2= [];
     if (!err) {
 
         for (var i = 0; i < data["data"].length; i++) {
@@ -151,12 +157,14 @@ function othergraph(err, data) {
             if (compareMonth === todayMonth && year2===year) {
                 grapharray2.push(data["data"][i]["usd"]);
 
-                labelarray2.push(compareMonth);
+                labelarray2.push(data["data"][i]["time"]);
+
 
             }
           }
         }
             makeMonthChart();
+            document.querySelector('#edit').innerHTML="Data for the month of "+ x.slice(5,7);
 
 
 }
@@ -186,7 +194,7 @@ function makeMonthChart() {
             pointRadius: 1,
             pointHitRadius: 10,
             data: grapharray2,
-            
+
 
         }]
     };
@@ -196,13 +204,18 @@ function makeMonthChart() {
         type: 'line',
         data: data,
         options: {
+          scales:{
             xAxes: [{
-                display: false,
+                display: true,
+                  ticks:{
+                    suggestedMin:0,
+                  }
             }],
             yAxes: [{
                 display: true
             }]
         }
+      }
 
     });
 }
