@@ -37,7 +37,7 @@ function thingToDo(err, data) {
             console.log("your ether amount in " + convertTo + " is " + value);
 
             document.body.querySelector('#result1').innerHTML = "your ether amount in " + convertTo + " is " + value;
-            document.body.querySelector('.startOver1').style.display="block";
+            document.body.querySelector('.startOver1').style.display = "block";
         } else {
             ajax('GET', 'http://api.fixer.io/latest?base=USD', function(error, data2) {
                 if (!error) {
@@ -54,12 +54,12 @@ function thingToDo(err, data) {
                         var value = (amount * rateobj[convertTo]).toFixed(2);
                         console.log("your ether amount in " + convertTo + " is " + value);
                         document.body.querySelector('#result1').innerHTML = "your ether amount in " + convertTo + " is " + value;
-                        document.body.querySelector('.startOver1').style.display="block";
+                        document.body.querySelector('.startOver1').style.display = "block";
 
                     } else {
                         //console.log("we don't have that conversion rate. Sorry for the inconvience")
                         document.body.querySelector('#result1').innerHTML = "we don't have that conversion rate. Sorry for the inconvience";
-                        document.body.querySelector('.startOver1').style.display="block";
+                        document.body.querySelector('.startOver1').style.display = "block";
                     }
                 }
             });
@@ -123,10 +123,10 @@ function otherThing(err, data) {
 
                         console.log("your " + convertFrom + " amount in  ethers is " + value);
                         document.body.querySelector('#result2').innerHTML = "your " + convertFrom + " amount in  ethers is " + value;
-                        document.body.querySelector('.startOver').style.display="block";
+                        document.body.querySelector('.startOver').style.display = "block";
                     } else {
                         document.body.querySelector('#result2').innerHTML = "We don't have the conversion rate. Sorry for the inconvience";
-                        document.body.querySelector('.startOver').style.display="block";
+                        document.body.querySelector('.startOver').style.display = "block";
                     }
                 }
             });
@@ -154,14 +154,14 @@ function from() {
     document.querySelector('.disapear').style.display = "none";
 }
 
-function handlereset(){
-  document.querySelector('.disapear').style.display = "block";
-  document.querySelector('.upper').style.display = 'none';
-  document.querySelector('.lower').style.display = 'none';
-  document.body.querySelector('.startOver').style.display="none";
-  document.body.querySelector('.startOver1').style.display="none";
-  document.getElementById("form1").reset();
-  document.getElementById("form2").reset();
-  document.body.querySelector('#result2').innerHTML = "";
-  document.body.querySelector('#result1').innerHTML = "";
+function handlereset() {
+    document.querySelector('.disapear').style.display = "block";
+    document.querySelector('.upper').style.display = 'none';
+    document.querySelector('.lower').style.display = 'none';
+    document.body.querySelector('.startOver').style.display = "none";
+    document.body.querySelector('.startOver1').style.display = "none";
+    document.getElementById("form1").reset();
+    document.getElementById("form2").reset();
+    document.body.querySelector('#result2').innerHTML = "";
+    document.body.querySelector('#result1').innerHTML = "";
 }

@@ -19,7 +19,7 @@
 var grapharray = [];
 var grapharray2 = [];
 var labelarray = [];
-var labelarray2=[];
+var labelarray2 = [];
 
 
 function ajax(method, url, handler) {
@@ -47,14 +47,14 @@ function start() {
 
 function thingToDo(err, data) {
 
-  grapharray = [];
-  labelarray = [];
-  document.querySelector('canvas').remove();
- // document.querySelector('.chart').appendChild(document.createElement('canvas'));
- document.querySelector('.chart').insertBefore(document.createElement("canvas"), document.querySelector('#edit'));
-  document.querySelector('canvas').id="myChart";
-  document.querySelector('#myChart').style.height="455";
-  document.querySelector('#myChart').style.width="1366";
+    grapharray = [];
+    labelarray = [];
+    document.querySelector('canvas').remove();
+    // document.querySelector('.chart').appendChild(document.createElement('canvas'));
+    document.querySelector('.chart').insertBefore(document.createElement("canvas"), document.querySelector('#edit'));
+    document.querySelector('canvas').id = "myChart";
+    document.querySelector('#myChart').style.height = "455";
+    document.querySelector('#myChart').style.width = "1366";
 
 
 
@@ -84,7 +84,7 @@ function thingToDo(err, data) {
         }
         makechart();
 
-        document.querySelector('#edit').innerHTML="Hour of the day";
+        document.querySelector('#edit').innerHTML = "Hour of the day";
     }
 
 }
@@ -121,7 +121,7 @@ function makechart() {
     };
 
 
-    var myLineChart = new Chart(ctx, {
+  new Chart(ctx, {
 
         type: 'line',
         data: data,
@@ -140,32 +140,33 @@ function makechart() {
 // works  before this adding new below
 
 function start2() {
-  // grapharray2= [];
-  // labelarray2= [];
+    // grapharray2= [];
+    // labelarray2= [];
     ajax('GET', 'https://etherchain.org/api/statistics/price', othergraph);
 
 }
 
 function othergraph(err, data) {
-  grapharray2= [];
-  labelarray2= [];
-  document.querySelector('canvas').remove();
- // document.querySelector('.chart').appendChild(document.createElement('canvas'));
- document.querySelector('.chart').insertBefore(document.createElement("canvas"), document.querySelector('#edit'));
-  document.querySelector('canvas').id="myChart";
-  document.querySelector('#myChart').style.height="455";
-  document.querySelector('#myChart').style.width="1366";
+  var x;
+    grapharray2 = [];
+    labelarray2 = [];
+    document.querySelector('canvas').remove();
+    // document.querySelector('.chart').appendChild(document.createElement('canvas'));
+    document.querySelector('.chart').insertBefore(document.createElement("canvas"), document.querySelector('#edit'));
+    document.querySelector('canvas').id = "myChart";
+    document.querySelector('#myChart').style.height = "455";
+    document.querySelector('#myChart').style.width = "1366";
     if (!err) {
 
         for (var i = 0; i < data["data"].length; i++) {
-            var x = data["data"][i]["time"];
+            x = data["data"][i]["time"];
 
             //       // var x= x.slice(0,10);
             //console.log(new Date(x));
 
             var compareMonth = new Date(x).getMonth();
 
-            var year=new Date(x).getFullYear();
+            var year = new Date(x).getFullYear();
 
             var today = new Date();
 
@@ -175,19 +176,19 @@ function othergraph(err, data) {
             //       var todaymonth=today.getMonth();
             //       // console.log(today);
 
-            if (compareMonth === todayMonth && year2===year) {
+            if (compareMonth === todayMonth && year2 === year) {
                 grapharray2.push(data["data"][i]["usd"]);
 
-                var shortLabel=data["data"][i]["time"].slice(5, 10);
+                var shortLabel = data["data"][i]["time"].slice(5, 10);
 
                 labelarray2.push(shortLabel);
 
 
             }
-          }
         }
-            makeMonthChart();
-            document.querySelector('#edit').innerHTML="Data for the month of "+ x.slice(5,7);
+    }
+    makeMonthChart();
+    document.querySelector('#edit').innerHTML = "Data for the month of " + x.slice(5, 7);
 
 
 }
@@ -224,24 +225,24 @@ function makeMonthChart() {
     };
 
 
-    var myLineChart = new Chart(ctx, {
+new Chart(ctx, {
         type: 'line',
         data: data,
         options: {
-          scales:{
-            xAxes: [{
-                display: true,
-                  ticks:{
-                    maxTicksLimit: 30,
-                    beginAtZero: true,
-                    suggestedMin:0,
-                  }
-            }],
-            yAxes: [{
-                display: true
-            }]
+            scales: {
+                xAxes: [{
+                    display: true,
+                    ticks: {
+                        maxTicksLimit: 30,
+                        beginAtZero: true,
+                        suggestedMin: 0,
+                    }
+                }],
+                yAxes: [{
+                    display: true
+                }]
+            }
         }
-      }
 
     });
 }
