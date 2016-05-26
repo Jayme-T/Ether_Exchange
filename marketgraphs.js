@@ -21,6 +21,7 @@ var grapharray2 = [];
 var labelarray = [];
 var labelarray2=[];
 
+
 function ajax(method, url, handler) {
     var req = new XMLHttpRequest();
 
@@ -48,7 +49,12 @@ function thingToDo(err, data) {
 
   grapharray = [];
   labelarray = [];
-
+  document.querySelector('canvas').remove();
+ // document.querySelector('.chart').appendChild(document.createElement('canvas'));
+ document.querySelector('.chart').insertBefore(document.createElement("canvas"), document.querySelector('#edit'));
+  document.querySelector('canvas').id="myChart";
+  document.querySelector('#myChart').style.height="455";
+  document.querySelector('#myChart').style.width="1366";
 
 
 
@@ -108,12 +114,15 @@ function makechart() {
             pointRadius: 1,
             pointHitRadius: 10,
             data: grapharray,
+            responsive:false
+
 
         }]
     };
 
 
     var myLineChart = new Chart(ctx, {
+
         type: 'line',
         data: data,
         options: {
@@ -123,6 +132,7 @@ function makechart() {
             yAxes: [{
                 display: true
             }]
+
         }
 
     });
@@ -139,11 +149,12 @@ function start2() {
 function othergraph(err, data) {
   grapharray2= [];
   labelarray2= [];
- //  document.querySelector('canvas').remove();
- // document.querySelector('.chart').appendChild(document.createElement('canvans'));
- //  document.querySelector('.chart').children[1].id="myChart";
- //  document.querySelector('myChart').style.height="455";
- //  document.querySelector('myChart').style.width="1366";
+  document.querySelector('canvas').remove();
+ // document.querySelector('.chart').appendChild(document.createElement('canvas'));
+ document.querySelector('.chart').insertBefore(document.createElement("canvas"), document.querySelector('#edit'));
+  document.querySelector('canvas').id="myChart";
+  document.querySelector('#myChart').style.height="455";
+  document.querySelector('#myChart').style.width="1366";
     if (!err) {
 
         for (var i = 0; i < data["data"].length; i++) {

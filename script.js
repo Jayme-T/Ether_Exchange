@@ -37,7 +37,7 @@ function thingToDo(err, data) {
             console.log("your ether amount in " + convertTo + " is " + value);
 
             document.body.querySelector('#result1').innerHTML = "your ether amount in " + convertTo + " is " + value;
-
+            document.body.querySelector('.startOver1').style.display="block";
         } else {
             ajax('GET', 'http://api.fixer.io/latest?base=USD', function(error, data2) {
                 if (!error) {
@@ -54,10 +54,12 @@ function thingToDo(err, data) {
                         var value = (amount * rateobj[convertTo]).toFixed(2);
                         console.log("your ether amount in " + convertTo + " is " + value);
                         document.body.querySelector('#result1').innerHTML = "your ether amount in " + convertTo + " is " + value;
+                        document.body.querySelector('.startOver1').style.display="block";
 
                     } else {
-                      //console.log("we don't have that conversion rate. Sorry for the inconvience")
-                      document.body.querySelector('#result1').innerHTML = "we don't have that conversion rate. Sorry for the inconvience";
+                        //console.log("we don't have that conversion rate. Sorry for the inconvience")
+                        document.body.querySelector('#result1').innerHTML = "we don't have that conversion rate. Sorry for the inconvience";
+                        document.body.querySelector('.startOver1').style.display="block";
                     }
                 }
             });
@@ -81,7 +83,8 @@ document.body.querySelector('#initial').addEventListener('click', start);
 
 document.body.querySelector('#second').addEventListener('click', startother);
 
-
+document.body.querySelector('.startOver').addEventListener('click', handlereset);
+document.body.querySelector('.startOver1').addEventListener('click', handlereset);
 
 function otherThing(err, data) {
     if (!err) {
@@ -89,8 +92,8 @@ function otherThing(err, data) {
 
 
         var convertFrom = document.body.querySelector('#currency').value;
-        if (convertFrom === "btc" || convertFrom === "usd"||convertFrom === "BTC" || convertFrom === "USD") {
-          convertFrom=convertFrom.toLowerCase();
+        if (convertFrom === "btc" || convertFrom === "usd" || convertFrom === "BTC" || convertFrom === "USD") {
+            convertFrom = convertFrom.toLowerCase();
 
             var conversionRate = data["data"]["price"][convertFrom];
 
@@ -110,39 +113,55 @@ function otherThing(err, data) {
                     //console.log(convertTo);
                     //  console.log(convertFrom);
                     if (rateobj.hasOwnProperty(convertFrom)) {
-                    var amount = document.querySelector('#startingamount').value / rateobj[convertFrom];
-                    //console.log(amount);
-                    var conversionRate = data["data"]["price"]["usd"];
+                        var amount = document.querySelector('#startingamount').value / rateobj[convertFrom];
+                        //console.log(amount);
+                        var conversionRate = data["data"]["price"]["usd"];
 
 
-                    var value = (amount / conversionRate).toFixed(4);
+                        var value = (amount / conversionRate).toFixed(4);
 
 
-                    console.log("your " + convertFrom + " amount in  ethers is " + value);
-                    document.body.querySelector('#result2').innerHTML = "your " + convertFrom + " amount in  ethers is " + value;
+                        console.log("your " + convertFrom + " amount in  ethers is " + value);
+                        document.body.querySelector('#result2').innerHTML = "your " + convertFrom + " amount in  ethers is " + value;
+                        document.body.querySelector('.startOver').style.display="block";
+                    } else {
+                        document.body.querySelector('#result2').innerHTML = "We don't have the conversion rate. Sorry for the inconvience";
+                        document.body.querySelector('.startOver').style.display="block";
+                    }
                 }
-                else {
-                  document.body.querySelector('#result2').innerHTML ="We don't have the conversion rate. Sorry for the inconvience";
-                }
-              }
             });
         }
     }
 
 }
 
-document.querySelector('.square2').style.height="90px";
-document.querySelector('.square2').style.width="90px";
+document.querySelector('.square2').style.height = "90px";
+document.querySelector('.square2').style.width = "90px";
 document.querySelector('.square2').addEventListener('click', to);
-function to(){
-  document.querySelector('.lower').style.display='block';
-  document.querySelector('.disapear').style.display="none";
+
+function to() {
+    document.querySelector('.disapear').style.display = "none";
+    document.querySelector('.lower').style.display = 'block';
+
 }
 
-document.querySelector('.square3').style.height="90px";
-document.querySelector('.square3').style.width="90px";
+document.querySelector('.square3').style.height = "90px";
+document.querySelector('.square3').style.width = "90px";
 document.querySelector('.square3').addEventListener('click', from);
-function from(){
-  document.querySelector('.upper').style.display='inline';
-  document.querySelector('.disapear').style.display="none";
+
+function from() {
+    document.querySelector('.upper').style.display = 'block';
+    document.querySelector('.disapear').style.display = "none";
+}
+
+function handlereset(){
+  document.querySelector('.disapear').style.display = "block";
+  document.querySelector('.upper').style.display = 'none';
+  document.querySelector('.lower').style.display = 'none';
+  document.body.querySelector('.startOver').style.display="none";
+  document.body.querySelector('.startOver1').style.display="none";
+  document.getElementById("form1").reset();
+  document.getElementById("form2").reset();
+  document.body.querySelector('#result2').innerHTML = "";
+  document.body.querySelector('#result1').innerHTML = "";
 }

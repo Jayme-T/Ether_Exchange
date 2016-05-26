@@ -18,54 +18,62 @@
 <body class="convert">
     <div class="container-fluid">
         <div class="row bg-info">
-          <div class="col-md-12">
-              <div class="row">
-                  <div class="col-md-3">
-                      <img src="face.jpg" width="50px;">
-                  </div>
-                  <div class="col-md-6 title"> Ether Exchange </div>
-                  <div class="col-md-1">
-                      <br>
-                      <button onclick="window.location.href='graphhtml.html'" class="bg-success"> Graphs </button>
-                  </div>
-                  <div class="col-md-1">
-                      <br>
-                      <button onclick="window.location.href='index.html'" class="bg-success">Home</button>
-                  </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="images/face.jpg" width="50px;">
+                    </div>
+                    <div class="col-md-6 title"> Ether Exchange </div>
+                    <div class="col-md-1">
+                        <br>
+                        <button onclick="window.location.href='graphhtml.html'" class="bg-success"> Graphs </button>
+                    </div>
+                    <div class="col-md-1">
+                        <br>
+                        <button onclick="window.location.href='index.html'" class="bg-success">Home</button>
+                    </div>
 
-              <div class="col-md-1">
-                  <br>
-                  <button onclick="window.location.href='whyether.html'" class="bg-success"> why ethers </button>
-              </div>
-          </div>
-          </div>
-          </div>
-      </div>
+                    <div class="col-md-1">
+                        <br>
+                        <button onclick="window.location.href='whyether.html'" class="bg-success"> why ethers </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
 
-      <div class="row disapear">
-          <div class="col-md-2"> </div>
-          <div class="col-md-8">
-              <div class="row">
-                  <div class="col-md-1"> </div>
-                  <div class="col-md-10">
-                      <h1> Would you like to convert to or from Ethers?</h1>
-                      <button class="square2"> To </button>
-                      <button class="square3"> From </button>
-                  </div>
-
-        <div class="row lower">
+        <div class="row disapear">
             <div class="col-md-2"> </div>
             <div class="col-md-8">
                 <div class="row">
                     <div class="col-md-1"> </div>
                     <div class="col-md-10">
-                        <h1> If you have Ethers and are looking to convert to another currency </h1>
+                        <h1> Would you like to convert to or from Ethers?</h1>
+                        <button class="square2"> To </button>
+                        <button class="square3"> From </button>
                     </div>
                 </div>
-                <div class="row bottom" id="first">
+            </div>
+        </div>
+
+        <div class="row lower">
+
+            <!-- <div class="row">
                     <div class="col-md-1"> </div>
                     <div class="col-md-10">
-                        <form name="conversion">
+                        <!-- <h1> If you have Ethers and are looking to convert to another currency </h1> -->
+            <!-- </div> -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="row">
+                    <!-- id="first" -->
+                    <div class="col-md-2"> </div>
+                    <div class="col-md-8">
+                        <form name="conversion" id="form1">
                             <label> number of ether
                                 <input type="text" id="searchinput">
                             </label>
@@ -82,50 +90,60 @@
                         </form>
                         <button id="initial"> convert </button>
                         <p id="result1"> </p>
+                        <button class="startOver1" style="display:none"> Go Back </button>
                     </div>
                 </div>
-              </div>
             </div>
 
-                <br>
-                <br>
-                <br>
-                <div class="row upper">
-                    <div class="col-md-2"> </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="row upper">
+            <!-- <div class="col-md-2"> </div>
                     <div class="col-md-8">
                         <div class="row">
                             <div class="col-md-1"> </div>
                             <div class="col-md-10">
                                 <h1> If you are looking to convert a currency to Ether</h1>
                             </div>
-                        </div>
-                  <!-- </div>
+                        </div> -->
+            <!-- </div>
                 </div> -->
-                    <div class="row bg-success">
-                        <div class="col-md-2"> </div>
-                        <div class="col-md-10">
-                            <form name="conversion_other">
 
-                                <label> 3 letter Starting Currency abbreviation
-                                    <input type="text" id="currency">
-                                </label>
-                                <br>
-                                <label> amount
-                                    <input type="text" id="startingamount">
-                                </label>
-                                <br>
+            <div class="row">
+                <!-- bg-success -->
+                <div class="col-md-2"> </div>
+                <div class="col-md-8">
+                    <form name="conversion_other" id="form2">
+
+                        <label> 3 letter Starting Currency abbreviation
+                            <input type="text" id="currency">
+                        </label>
+                        <br>
+                        <label> amount
+                            <input type="text" id="startingamount">
+                        </label>
+                        <br>
 
 
-                            </form>
-                            <button id="second"> convert </button>
-                            <p id="result2"> </p>
-                          </div>
-                        </div>
-                    </div>
+                    </form>
+                    <button id="second"> convert </button>
+
+                    <p id="result2"> </p>
+                    <button class="startOver" style="display:none"> Go Back </button>
                 </div>
+            </div>
+        </div>
+    </div>
 
 
-        <script type="text/javascript" src="script.js"></script>
+
+
+    <script type="text/javascript" src="script.js"></script>
 
 
 </body>
