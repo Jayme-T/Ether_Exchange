@@ -91,7 +91,7 @@ function otherThing(err, data) {
         var convertFrom = document.body.querySelector('#currency').value;
         if (convertFrom === "btc" || convertFrom === "usd"||convertFrom === "BTC" || convertFrom === "USD") {
           convertFrom=convertFrom.toLowerCase();
-          
+
             var conversionRate = data["data"]["price"][convertFrom];
 
             var amount = document.querySelector('#startingamount').value;
@@ -129,4 +129,20 @@ function otherThing(err, data) {
         }
     }
 
+}
+
+document.querySelector('.square2').style.height="90px";
+document.querySelector('.square2').style.width="90px";
+document.querySelector('.square2').addEventListener('click', to);
+function to(){
+  document.querySelector('.lower').style.display='block';
+  document.querySelector('.disapear').style.display="none";
+}
+
+document.querySelector('.square3').style.height="90px";
+document.querySelector('.square3').style.width="90px";
+document.querySelector('.square3').addEventListener('click', from);
+function from(){
+  document.querySelector('.upper').style.display='inline';
+  document.querySelector('.disapear').style.display="none";
 }

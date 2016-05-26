@@ -45,6 +45,7 @@ function start() {
 }
 
 function thingToDo(err, data) {
+
   grapharray = [];
   labelarray = [];
 
@@ -53,7 +54,7 @@ function thingToDo(err, data) {
 
 
     if (!err) {
-        console.log(data);
+        // console.log(data);
         for (var i = 0; i < data["data"].length; i++) {
             var x = data["data"][i]["time"];
             // var x= x.slice(0,10);
@@ -83,7 +84,7 @@ function thingToDo(err, data) {
 }
 
 function makechart() {
-  
+
     var ctx = document.getElementById("myChart");
     var data = {
         labels: labelarray,
@@ -138,6 +139,11 @@ function start2() {
 function othergraph(err, data) {
   grapharray2= [];
   labelarray2= [];
+ //  document.querySelector('canvas').remove();
+ // document.querySelector('.chart').appendChild(document.createElement('canvans'));
+ //  document.querySelector('.chart').children[1].id="myChart";
+ //  document.querySelector('myChart').style.height="455";
+ //  document.querySelector('myChart').style.width="1366";
     if (!err) {
 
         for (var i = 0; i < data["data"].length; i++) {
