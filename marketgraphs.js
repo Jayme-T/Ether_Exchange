@@ -114,7 +114,7 @@ function makechart() {
             pointRadius: 1,
             pointHitRadius: 10,
             data: grapharray,
-            responsive:false
+            // responsive:false
 
 
         }]
@@ -178,7 +178,9 @@ function othergraph(err, data) {
             if (compareMonth === todayMonth && year2===year) {
                 grapharray2.push(data["data"][i]["usd"]);
 
-                labelarray2.push(data["data"][i]["time"]);
+                var shortLabel=data["data"][i]["time"].slice(5, 10);
+
+                labelarray2.push(shortLabel);
 
 
             }
@@ -195,6 +197,7 @@ function makeMonthChart() {
     var ctx = document.getElementById("myChart");
     var data = {
         labels: labelarray2,
+
         datasets: [{
             label: "Ether value in USD",
             fill: false,
@@ -229,6 +232,8 @@ function makeMonthChart() {
             xAxes: [{
                 display: true,
                   ticks:{
+                    maxTicksLimit: 30,
+                    beginAtZero: true,
                     suggestedMin:0,
                   }
             }],
