@@ -1,5 +1,7 @@
-# Personal Project Assignment
-### Ethereum/bitcoin/markets
+# Ether Exchange
+
+
+#### A personal front end project
 
 Welcome to Ether Exchange! This site was created as a web application that was developed so users can see the current conversion rate between ethers, bitcoin, and other frequently used currencies. In addition to currency conversions based on user input, Ether Exchange offers users the ability to look at graphs showing conversion rates, and fluctuations within conversion rates, for the current day or for the past month depending on what the user specifies. This asset is intended to help the user understand market trends of the currency (Ethers) associated with the Ethereum platform.
 
