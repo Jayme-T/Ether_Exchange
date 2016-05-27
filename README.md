@@ -12,4 +12,4 @@ Ethereum is an organization focused on using blockchain to promote decentralizat
 
 This site was written using HTML, CSS, Javascript, and bootstrap. It incorporates AJAX requests to access two different API’s and DOM manipulation to navigate through the JSON parsed objects that were returned from the API’s. It includes the use of higher order functions and Chartjs. It utilizes a multitude of functions, including higher order functions and nested functions to to perform the various tasks that the site offers. I also added event listeners to call some of the functions and to respond to user input. I worked with Charts.js to help create the graphs while demonstrating my ability to use and learn a new tool that was not presented as part of our class work. I hope that you have enjoyed looking at the site. Please contact me with any questions.
 
-[![See my video click here ]https://youtu.be/bD-zbwhEpyM
+[![See my video click here https://youtu.be/bD-zbwhEpyM]https://youtu.be/bD-zbwhEpyM
